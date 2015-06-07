@@ -2,8 +2,7 @@ FROM sdd330/alpine-oraclejdk7
 
 MAINTAINER Yang Leijun <yang.leijun@gmail.com>
 
-ENV TOMCAT_VERSION=7.0.59
-ENV CATALINA_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n"
+ENV TOMCAT_VERSION 7.0.59
 
 RUN curl \
   --silent \
@@ -19,8 +18,16 @@ VOLUME /usr/tomcat/webapps
 
 # SET CATALINE_HOME and PATH
 ENV CATALINA_HOME /usr/tomcat
+ENV JMX false
+ENV JMX_PORT 9004
+ENV JMX_HOSTNAME localhost
+ENV DEBUG_PORT 8000
+ENV MEM 512m
+ENV MMEM 128m
 ENV PATH $PATH:$CATALINA_HOME/bin
 
-EXPOSE 8080
+ADD setenv.sh $CATALINA_HOME/bin/
+
+EXPOSE 8080 9004 8000
 
 CMD ["catalina.sh", "run"]
