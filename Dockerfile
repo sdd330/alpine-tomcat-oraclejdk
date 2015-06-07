@@ -3,6 +3,7 @@ FROM sdd330/alpine-oraclejdk7
 MAINTAINER Yang Leijun <yang.leijun@gmail.com>
 
 ENV TOMCAT_VERSION=7.0.59
+ENV CATALINA_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n"
 
 RUN curl \
   --silent \
