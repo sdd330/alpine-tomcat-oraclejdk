@@ -8,6 +8,10 @@ Tomcat Oracle JDK7 Version based on Alpine Linux
 To start an instance:
 
 	docker run -d -p 8080:8080 --name tomcat-server sdd330/alpine-tomcat-oraclejdk
+	
+To start an instance and mount webapps:
+
+	docker run -d -p 8080:8080 -v [webapps dir]:/usr/tomcat/webapps --name tomcat-server sdd330/alpine-tomcat-oraclejdk
 
 To start with jmx and debug support:
 
