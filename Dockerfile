@@ -27,6 +27,7 @@ ENV MMEM 128m
 ENV PATH $PATH:$CATALINA_HOME/bin
 
 ADD setenv.sh $CATALINA_HOME/bin/
+RUN chmod +x $CATALINA_HOME/bin/setenv.sh
 
 EXPOSE 8080 9004 8000
 
