@@ -1,2 +1,2 @@
-# alpine-tomcat-oraclejdk
-Tomcat Oracle JDK Version based on Alpine Linux
+# alpine-tomcat-oraclejdk7
+Tomcat Oracle JDK7 Version based on Alpine Linux
