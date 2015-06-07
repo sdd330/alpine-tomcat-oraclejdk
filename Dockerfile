@@ -14,6 +14,8 @@ RUN curl \
     | tar x -C /usr/ \
     && mv /usr/apache-tomcat* /usr/tomcat
 
+VOLUME /usr/tomcat/webapps
+
 # SET CATALINE_HOME and PATH
 ENV CATALINA_HOME /usr/tomcat
 ENV PATH $PATH:$CATALINA_HOME/bin
